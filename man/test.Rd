@@ -28,6 +28,15 @@ binomial regression ("ZINB2"), zero-inflated Poisson regression ("ZIP"), and fra
 For "ZINB2" and "fbglm", see "fbglm::ZINB2" and "fbglm::fbglm" for details.
 In "ZIP" and "ZINB", all the covariates are used as regressors in both the count and zero-inflation component.
 }
+\examples{
+library(agridat)
+library(bbmle)
+data <-ridout.appleshoots
+my_y<-data$roots
+my_x<-data.frame(pho=data$pho)
+test( y=my_y, x=my_x , "fbglm", "ZINB2" )
+
+}
 \references{
 Vuong, Quang H. (1989). Likelihood Ratio Tests for Model Selection and non-nested Hypotheses. Econometrica. 57 (2): 307–333.
 }

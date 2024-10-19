@@ -23,7 +23,7 @@
 #'
 #' @export
 #' 
-#' @example 
+#' @examples 
 #' library(agridat)
 #' library(bbmle)
 #' data <-ridout.appleshoots
@@ -34,7 +34,6 @@
 test<-function( y,x,model1 ,model2){
   compute<-function(xx, y,x )
   {if(xx=="ZINB"){    
-    y<-my_y;x<-my_x
     data3<-cbind(intercept=rep(1, length(y)),x) 
     nn<-dim(data3)[2]
     nn0<-nn+1
@@ -72,8 +71,8 @@ test<-function( y,x,model1 ,model2){
       nn1<-2*nn+1
       nn2<-3*nn
       
-      ind<-rep(0, length(dat$roots))
-      ind[which(dat$roots==0)]<-1
+      ind<-rep(0, length(y))
+      ind[which(y==0)]<-1
       
       dnb<-function(k,theta,mu){prob<-theta/(mu+theta);dnbinom(x=k, size=theta, prob=prob, log = FALSE)}
       
@@ -116,10 +115,8 @@ test<-function( y,x,model1 ,model2){
       
       return( my.list  )  }
     if(xx=="ZIP"){ 
-      x<-my_x
-      y<-my_y
       ind<-rep(0, length(y))
-      ind[which(dat$roots==0)]<-1
+      ind[which(y==0)]<-1
       data3<-cbind(intercept=rep(1, length(y)),x) 
       nn<-dim(data3)[2]
       nn0<-nn+1
