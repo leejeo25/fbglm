@@ -1,3 +1,3 @@
-# fbglm (development version)
+# fbglm 1.0.0
 
 * Initial CRAN submission.
