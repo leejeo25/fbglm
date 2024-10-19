@@ -2,7 +2,7 @@ Package: fbglm
 Title: Fractional Binomial Regression Model
 Version: 0.0.0.9000
 Authors@R: 
-    person("Jeonghwa", "Lee", , "leejb@uncw.edu", role = c("aut", "cre"),
+    person("Jeonghwa", "Lee", , "leejb@uncw.edu", role = c("aut", "cre","cph"),
            comment = c(ORCID = "0000-0003-2023-144X"))
 Description: Fit a fractional binomial regression model to count data with excess zeros.
 License: MIT + file LICENSE
@@ -17,4 +17,3 @@ RoxygenNote: 7.3.2
 Suggests: 
     knitr,
     rmarkdown
-VignetteBuilder: knitr
