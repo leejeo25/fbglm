@@ -26,9 +26,9 @@
 #' @examples
 #' library(agridat)
 #' library(bbmle)
-#' data <-ridout.appleshoots
-#' my_y<-data$roots
-#' my_x<-data.frame(pho=data$pho)
+#' sample<-sample(270, 30)
+#' my_y<-ridout.appleshoots$roots[sample]
+#' my_x<-data.frame(pho=ridout.appleshoots$pho[sample])
 #' test( y=my_y, x=my_x , "fbglm", "ZINB2" )
 #'
 test<-function( y,x,model1 ,model2){
@@ -150,4 +150,6 @@ test<-function( y,x,model1 ,model2){
   final.p<- 1-pnorm(final,0,1)
   return(final.p)
 }
+
+
 
