@@ -55,6 +55,7 @@ test<-function( y,x,model1 ,model2){
     }
     data<-data.frame(y=y, x=x)
     C.ZINB<-pscl::zeroinfl(   y~.|., data=data, dist='negbin')$coef
+    C<-pscl::zeroinfl(   y~.|., data=data, dist='negbin')
     input<-c(c(C$theta),c(C.ZINB)$count, c(C.ZINB)$zero)
 
     my.list<-list( "likelihood"=likelihood_nb_1(input ) ,
