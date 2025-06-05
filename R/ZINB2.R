@@ -29,7 +29,7 @@
 #' Example 2
 #'ZINB2(y=c(0,1,4,2,2,1,3,0,0,6,4), x=data.frame(x1=c(1,3,4,5,4,3,6,7,4,3,1 )))
 #' Example 3
-#'ZINB2(y=c(0,1,4,2,2,1,3,0,0,6,4), x=data.frame(x1=c(1,3,4,5,4,3,6,7,4,3,1 )), w=c(1,1,1,1,1,1,1,1,1,1,1))
+#'ZINB2(y=c(0,1,4,2,2,1,3,0,0,6,4), x=data.frame(x1=c(1,3,4,5,4,3,6,7,4,3,1 )), w=sample(10, 11, replace=TRUE))
 #'
 ZINB2<-function(y,x,w=NULL){
   if(!is.null(w)){ 
