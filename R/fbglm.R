@@ -26,7 +26,7 @@
 #' my_y<-ridout.appleshoots$roots[sample]
 #' my_x<-data.frame(pho=ridout.appleshoots$pho[sample])
 #' fbglm(y=my_y, x=my_x  )
-#' fbglm(y=my_y, x=my_x , w=rep(1, 30) )
+#' fbglm(y=my_y, x=my_x , w=sample(10, 30, replace=TRUE) )
 #'
 fbglm<-function( y, x , w=NULL){
   dfrbinom<-function(x, size, prob, h, c, start = FALSE) {
