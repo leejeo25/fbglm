@@ -7,11 +7,11 @@
 #'and dispersion parameter \eqn{\theta} (with log link)-- on covariates.
 #'
 #'@references
-#'Breece, C. and Lee, J. (2024) Fractional binomial regression model for count data with excess zeros.\url{https://arxiv.org/html/2410.08488v1}
+#' Lee, J. and Breece, C. (2025) Fractional binomial regression model for count data with excess zeros.\url{https://arxiv.org/html/2410.08488v1}
 #'
 #' @param y A response vector.
 #' @param x A data frame with covariates.
-#'
+#' @param w A vector of weights (optional argument). 
 #' @return A list of log-likelihood, estimated coefficients, and maximum likelihood estimation results.
 #'
 #'
@@ -30,7 +30,7 @@
 #'ZINB2(y=c(0,1,4,2,2,1,3,0,0,6,4), x=data.frame(x1=c(1,3,4,5,4,3,6,7,4,3,1 )))
 #' Example 3
 #'ZINB2(y=c(0,1,4,2,2,1,3,0,0,6,4), x=data.frame(x1=c(1,3,4,5,4,3,6,7,4,3,1 )), w=c(1,1,1,1,1,1,1,1,1,1,1))
-
+#'
 ZINB2<-function(y,x,w=NULL){
   if(!is.null(w)){ 
   w_0<-which(y==0)
