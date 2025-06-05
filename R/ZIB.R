@@ -20,12 +20,9 @@
 #' @export
 #'
 #' @examples
-#' library(agridat)
-#' library(bbmle)
-#' sample<-sample(270, 30)
-#' my_y<-ridout.appleshoots$roots[sample]
-#' my_x<-data.frame(pho=ridout.appleshoots$pho[sample])
-#' ZINB2(y=my_y, x=my_x  )
+#'
+#' ZIB(y=c(0,1,4,2,2,1,3,0,0,6,4), x=data.frame(x1=c(1,3,4,5,4,3,6,7,4,3,1 )))
+#'ZIB(y=c(0,1,4,2,2,1,3,0,0,6,4), x=data.frame(x1=c(1,3,4,5,4,3,6,7,4,3,1 )), w=c(1,1,1,1,1,1,1,1,1,1,1))
 #'
 ZIB<-function(y,x,w=NULL){
   if(!is.null(w)){
