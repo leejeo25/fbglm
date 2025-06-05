@@ -1,4 +1,32 @@
-
+#' Zero-inflated binomial regression
+#'@description
+#'Fit zero-inflated binomial regression model via maximum likelihood.
+#'
+#'@details
+#'The model regresses all the parameters-- zero-inflation component \eqn{\pi} (with logit link), and the probability of success \eqn{p} (with log link)-- on covariates.
+#'
+#'@references
+#' Lee, J, and Breece, C. (2025) Fractional binomial regression model for count data with excess zeros.\url{https://arxiv.org/html/2410.08488v1}
+#'
+#' @param y A response vector.
+#' @param x A data frame with covariates.
+#' @param w (optional) A vector of weights.  
+#'
+#' @return A list of AIC, log-likelihood, estimated coefficients, and maximum likelihood estimation results.
+#'
+#'
+#'@importFrom stats C dnbinom dbinom dpois pnorm sd setNames
+#'
+#' @export
+#'
+#' @examples
+#' library(agridat)
+#' library(bbmle)
+#' sample<-sample(270, 30)
+#' my_y<-ridout.appleshoots$roots[sample]
+#' my_x<-data.frame(pho=ridout.appleshoots$pho[sample])
+#' ZINB2(y=my_y, x=my_x  )
+#'
 ZIB<-function(y,x,w=NULL){
   if(!is.null(w)){
   w_0<-which(y==0)
